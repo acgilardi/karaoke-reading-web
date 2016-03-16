@@ -1,0 +1,7 @@
+<h1>Station Guide</h1>
+
+<!--<div>{{bookText}}</div>-->
+<word
+    [ngClass]="{selected: selectedWordId == 'word.' + i}"
+    (click)="clickWord($event)" style="display: inline;" *ngFor="#word of words; #i = index" id="word.{{i}}">{{word}} </word>
+
