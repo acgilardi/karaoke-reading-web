@@ -1,4 +1,6 @@
 import {Component} from 'angular2/core';
+import { Books } from '../books/books';
+
 //import {AngularFire, FirebaseListObservable} from 'angularfire2';
 //import * as Firebase from 'firebase';
 
@@ -11,7 +13,10 @@ const template: string = require('./station-guide.html');
 @Component({
     selector: 'station-guide',
     styles: [styles],
-    template
+    template,
+    directives: [
+        Books
+    ],
 })
 export class StationGuide {
     public bookText: string;

@@ -8,6 +8,7 @@ import { App } from './components/app/app';
 // core
 import { AUTH_PROVIDERS } from './core/auth/providers';
 import { TASK_PROVIDERS } from './core/task/providers';
+import { BOOK_PROVIDERS } from './core/book/book-providers';
 
 // global styles
 import './styles/styles.scss';
@@ -25,5 +26,6 @@ bootstrap(App, [
   ROUTER_PROVIDERS,
   AUTH_PROVIDERS,
   TASK_PROVIDERS,
+  BOOK_PROVIDERS,
   provide(APP_BASE_HREF, {useValue: '/'})
 ]).catch((error: Error) => console.error(error));
