@@ -1,3 +1,5 @@
+<a (click)="addBook()">Add Book</a>
+
 <div class="task-list">
-  <book-item [model]="book" *ngFor="#book of books"></book-item>
+  <book-item [model]="book" *ngFor="#book of books | async"></book-item>
 </div>

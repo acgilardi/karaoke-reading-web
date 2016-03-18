@@ -12,7 +12,7 @@ export class BookService {
         });
     }
 
-    deleteTask(book: IBook): void {
+    deleteBook(book: IBook): void {
         this.ref.child(book.key).remove((error: Error) => {
             if (error) {
                 console.error('ERROR @ deleteBook :', error);
@@ -20,7 +20,7 @@ export class BookService {
         });
     }
 
-    updateTask(book: IBook, changes: any): void {
+    updateBook(book: IBook, changes: any): void {
         this.ref.child(book.key).update(changes, (error: Error) => {
             if (error) {
                 console.error('ERROR @ updateBook :', error);

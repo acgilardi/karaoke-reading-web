@@ -6,11 +6,12 @@ export interface IBook {
 
 export class Book implements IBook {
     rawText: string = '';
+    selectedWord: string = '';
     selectedWordId: string = 'word.0';
-    words: Array<String>;
+    //words: Array<String>;
 
     constructor(rawText: string) {
         this.rawText = rawText;
-        this.words = this.rawText.split(' ');
+        //this.words = this.rawText.split(' ');
     }
 }
