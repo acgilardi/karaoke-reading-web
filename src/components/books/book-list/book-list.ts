@@ -6,7 +6,7 @@ import { BookItem } from '../book-item/book-item';
 //import { TaskListFilterPipe } from './task-list-filter-pipe';
 import { BookService } from '../../../core/book/book-service';
 
-//const styles: string = require('./book-list.scss');
+const styles: string = require('./book-list.scss');
 const template: string = require('./book-list.html');
 
 
@@ -19,7 +19,7 @@ const template: string = require('./book-list.html');
   //  TaskListFilterPipe
   //],
   selector: 'book-list',
-  //styles: [styles],
+  styles: [styles],
   template
 })
 
@@ -34,6 +34,6 @@ export class BookList {
   }
 
   addBook(): void {
-    this.bookService.createBook('This is the book text');
+    this.bookService.createBook('Mouse and me 1', 'This is the book text');
   }
 }

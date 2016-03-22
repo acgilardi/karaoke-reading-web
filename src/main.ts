@@ -10,8 +10,11 @@ import { AUTH_PROVIDERS } from './core/auth/providers';
 import { TASK_PROVIDERS } from './core/task/providers';
 import { BOOK_PROVIDERS } from './core/book/book-providers';
 
-// global styles
-import './styles/styles.scss';
+// include bootstrap using webpack config
+require('bootstrap-webpack');
+
+// globl styles
+require('!style!css!less!./main.less');
 
 
 if (process.env.NODE_ENV === 'production') {

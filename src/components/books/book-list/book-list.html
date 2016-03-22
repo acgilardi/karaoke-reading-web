@@ -1,4 +1,4 @@
-<a (click)="addBook()">Add Book</a>
+<button class="sign-in__button" (click)="addBook()" type="button">Add Book</button>
 
 <div class="task-list">
   <book-item [model]="book" *ngFor="#book of books | async"></book-item>

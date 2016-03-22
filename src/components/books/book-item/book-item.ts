@@ -24,9 +24,13 @@ export class BookItem {
 
   constructor(private bookService: BookService) {}
 
-  selected(): void {
-    if (this.editing) {
-      console.log('Book Selected');
-    }
+  //selected(): void {
+  //  if (this.editing) {
+  //    console.log('Book Selected');
+  //  }
+  //}
+
+  deleteBook(): void {
+    this.bookService.deleteBook(this.model);
   }
 }
