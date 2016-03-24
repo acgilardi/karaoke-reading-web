@@ -1,26 +1,26 @@
-<div class="g-row sign-in">
-  <div class="g-col">
-    <h1 class="sign-in__heading">Sign in</h1>
-    <button class="sign-in__button" (click)="signInWithGithub()" type="button">GitHub</button>
-    <button class="sign-in__button" (click)="signInWithGoogle()" type="button">Google</button>
-    <button class="sign-in__button" (click)="signInWithTwitter()" type="button">Twitter</button>
-  </div>
-</div>
+<div class="container-fluid">
 
-<div class="btn-group">
-  <a class='btn btn-danger disabled'><i class="fa fa-google-plus" style="width:16px; height:20px"></i></a>
-  <a class='btn btn-danger' href='' style="width:12em;"> Sign in with Google</a>
-</div>
-<br /><br />
-<div class="btn-group">
-  <a class='btn btn-primary disabled'><i class="fa fa-facebook" style="width:16px; height:20px"></i></a>
-  <a class='btn btn-primary ' href='' style="width:12em"> Sign in with Facebook</a>
-</div>
-<br /><br />
-<div class="btn-group">
-  <a class='btn btn-info disabled'><i class="fa fa-twitter" style="width:16px; height:20px"></i></a>
-  <a class='btn btn-info ' href='' style="width:12em"> Sign in with Twitter</a>
-</div>
-<br /><br />
 
-<button class="btn btn-facebook"><i class="fa fa-facebook"></i> | Connect with Facebook</button>
+    <div class="row">
+        <div class="col-lg-2">
+            <a class="btn btn-block btn-social btn-github btn-lg" (click)="signInWithGithub()">
+                <span class="fa fa-github"></span>
+                Sign in with GitHub
+            </a>
+
+            <a class="btn btn-block btn-social btn-google btn-lg" (click)="signInWithGoogle()">
+                <span class="fa fa-google"></span>
+                Sign in with Google
+            </a>
+
+            <a class="btn btn-block btn-social btn-twitter btn-lg" (click)="signInWithTwitter()">
+                <span class="fa fa-twitter"></span>
+                Sign in with Twitter
+            </a>
+
+
+        </div>
+
+
+    </div>
+</div>

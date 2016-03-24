@@ -3,7 +3,7 @@ import { CanActivate, Router } from 'angular2/router';
 import { AuthRouteHelper } from 'core/auth/auth-route-helper';
 import { AuthService } from 'core/auth/auth-service';
 
-const styles: string = require('./sign-in.scss');
+const styles: string = require('./sign-in.less');
 const template: string = require('./sign-in.html');
 
 
@@ -34,6 +34,6 @@ export class SignIn {
   }
 
   private postSignIn(): void {
-    this.router.navigate(['/Tasks']);
+    this.router.navigate(['/Station']);
   }
 }

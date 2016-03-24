@@ -1,15 +1,40 @@
-<header class="header">
-  <div class="g-row">
-    <div class="g-col">
-      <h1 class="header__title">Reading Karaoke</h1>
+<!--<header class="header">-->
+  <!--<div class="g-row">-->
+    <!--<div class="g-col">-->
+      <!--<h1 class="header__title">Reading Karaoke</h1>-->
 
-      <ul class="header__links">
-        <li *ngIf="authenticated"><a class="header__link" (click)="signOut()" href="javascript:">Sign out</a></li>
-        <!--<li><a class="header__link header__link&#45;&#45;github" href="https://github.com/r-park/todo-angular2-firebase"></a></li>-->
-      </ul>
+      <!--<ul class="header__links">-->
+        <!--<li *ngIf="authenticated"><a class="header__link" (click)="signOut()" href="javascript:">Sign out</a></li>-->
+        <!--&lt;!&ndash;<li><a class="header__link header__link&#45;&#45;github" href="https://github.com/r-park/todo-angular2-firebase"></a></li>&ndash;&gt;-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</header>-->
+
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img id="header-logo" alt="Brand" src="http://appmite.com/wp-content/uploads/2014/12/appMite-logo-green-small.png">
+      </a>
     </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--<li><a [routerLink]="['Home']">Home</a></li>-->
+        <!--<li><a [routerLink]="['About']">About</a></li>-->
+        <!--<li><a [routerLink]="['Station']">Station</a></li>-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="authenticated"><a (click)="signOut()" href="javascript:">Sign out</a></li>
+      </ul>
+
+    </div>
+
+
   </div>
-</header>
+</nav>
 
 
 <main class="main">

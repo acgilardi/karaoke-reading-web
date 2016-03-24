@@ -10,10 +10,7 @@ import { AUTH_PROVIDERS } from './core/auth/providers';
 import { TASK_PROVIDERS } from './core/task/providers';
 import { BOOK_PROVIDERS } from './core/book/book-providers';
 
-// include bootstrap using webpack config
-require('bootstrap-webpack');
-
-// globl styles
+// global less styles
 require('!style!css!less!./main.less');
 
 
