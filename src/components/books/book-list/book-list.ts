@@ -1,39 +1,33 @@
-import { ChangeDetectionStrategy, Component, Input } from 'angular2/core';
-//import { RouterLink, RouteParams } from 'angular2/router';
+import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from 'angular2/core';
 import { List } from 'immutable';
 import { ReplaySubject } from 'rxjs/subject/ReplaySubject';
-import { BookItem } from '../book-item/book-item';
-//import { TaskListFilterPipe } from './task-list-filter-pipe';
+import { BookRow } from '../book-row/book-row';
 import { BookService } from '../../../core/book/book-service';
+import { IBook } from '../../../core/book/book';
 
-const styles: string = require('./book-list.scss');
+//const styles: string = require('!raw!less!./book-list.less');
 const template: string = require('./book-list.html');
 
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  directives: [
-    BookItem
-  ],
-  //pipes: [
-  //  TaskListFilterPipe
-  //],
-  selector: 'book-list',
-  styles: [styles],
-  template
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    directives: [BookRow],
+    selector: 'book-list',
+    //styles: [styles],
+    template
 })
 
 export class BookList {
-  @Input() books: ReplaySubject<List<any>>;
-  //books: any = ['one', 'two', 'three'];
+    @Input() public books: ReplaySubject<List<any>>;
+    @Output() public bookSelected: EventEmitter<any> = new EventEmitter();
 
-  //filter: string;
+    constructor(private bookService: BookService) {}
 
-  constructor(private bookService: BookService) {
-    //this.filter = params.get('filter');
-  }
+    addBook(): void {
+        this.bookService.createBook('Mouse and me 1', 'This is the book text');
+    }
 
-  addBook(): void {
-    this.bookService.createBook('Mouse and me 1', 'This is the book text');
-  }
+    onSelect(book: IBook): void {
+        this.bookSelected.emit(book);
+    }
 }

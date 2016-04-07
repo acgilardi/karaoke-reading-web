@@ -1,0 +1,50 @@
+
+@imagePath: ~"../img/";
+
+.fill-screen {
+  background-size: cover;
+  background-position: center;
+}
+
+#main-buttons .btn {
+  margin: 20px;
+}
+
+#main-buttons .btn i {
+  vertical-align: middle;
+}
+
+#main-buttons .btn span {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.btn.outline {
+  background: none;
+  padding: 12px 22px;
+}
+
+@button-outline-white: #FFFFFF;
+@button-outline-white-hover: #F0F0F0;
+@button-outline-white-active: #AAAAAA;
+
+.btn-primary.outline {
+  border: 2px solid @button-outline-white;
+  color: @button-outline-white;
+}
+
+.btn-primary.outline:hover,
+.btn-primary.outline:focus,
+.btn-primary.outline:active,
+.btn-primary.outline.active, .open >
+.dropdown-toggle.btn-primary {
+  color: @button-outline-white;
+  border-color: @button-outline-white;
+  box-shadow: none;
+}
+.btn-primary.outline:active,
+.btn-primary.outline.active {
+  border-color: @button-outline-white-hover;
+  color: @button-outline-white-hover;
+  box-shadow: none;
+}

@@ -12,7 +12,7 @@ import { BOOK_PROVIDERS } from './core/book/book-providers';
 
 // global less styles
 require('!style!css!less!./main.less');
-
+require('bootstrap-webpack');
 
 if (process.env.NODE_ENV === 'production') {
   enableProdMode();

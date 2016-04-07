@@ -1,35 +1,35 @@
 import {Component} from 'angular2/core';
 import { Books } from '../books/books';
+import { BookView } from '../book-view/book-view';
+import { IBook } from '../../core/book/book';
+import { Book } from '../../core/book/book';
 
-//import {AngularFire, FirebaseListObservable} from 'angularfire2';
-//import * as Firebase from 'firebase';
-
-//FIREBASE_PROVIDERS.push(defaultFirebase('https://yayday.firebaseio.com'));
-//declare var Firebase: any;
-
-const styles: string = require('./station-guide.scss');
+//const styles: string = require('./station-guide.less');
 const template: string = require('./station-guide.html');
 
 @Component({
     selector: 'station-guide',
-    styles: [styles],
+    //styles: [styles],
     template,
     directives: [
-        Books
+        Books,
+        BookView
     ],
 })
 export class StationGuide {
-    public bookText: string;
-    public selectedWordId: string;
-    public words: any;
+    //public bookText: string;
+    //public selectedWordId: string;
+    //public words: any;
 
-    public book: any; //FirebaseListObservable<Object[]>;
+    public book: IBook; //FirebaseListObservable<Object[]>;
 
-    constructor(/*public angularFire: AngularFire*/) {
+    constructor() {
+        this.book = new Book('', '');
+
         //var _this = this;
-        this.bookText = 'No Book Selected';
-        this.selectedWordId = 'word.0';
-        this.words = [];
+        //this.bookText = 'No Book Selected';
+        //this.selectedWordId = 'word.0';
+        //this.words = [];
         //this.book = angularFire.list('/book/a1');
         //this.book.add({hey: 'What'});
         //this.book.add('new');
@@ -62,18 +62,21 @@ export class StationGuide {
         //});
     }
 
+    onBookSelected(book: IBook): void {
+        console.log('Selected dude');
+        console.log(book);
+        this.book = book;
+    }
 
-    //private bookRef: FireBase = new Firebase("https://yayday.firebaseio.com/book/a1");
-
-    clickWord(): void {
-        //this.selectedWordId = event.target.id;
-        //this.book.add({
-        //    selectedWordId: this.selectedWordId,
-        //    selectedWord: event.target.innerText.trim()
-        //});
-
-        console.log(this.book);
-        console.log('word clicked');
-        //console.log(event.target.innerText.trim());
-    };
+    //clickWord(): void {
+    //    //this.selectedWordId = event.target.id;
+    //    //this.book.add({
+    //    //    selectedWordId: this.selectedWordId,
+    //    //    selectedWord: event.target.innerText.trim()
+    //    //});
+    //
+    //    console.log(this.book);
+    //    console.log('word clicked');
+    //    //console.log(event.target.innerText.trim());
+    //};
 }

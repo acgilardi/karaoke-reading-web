@@ -1,5 +1,5 @@
 <button class="sign-in__button" (click)="addBook()" type="button">Add Book</button>
 
-<div class="task-list">
-  <book-item [model]="book" *ngFor="#book of books | async"></book-item>
+<div class="book-list">
+  <book-row [book]="book" *ngFor="#book of books | async" (click)="onSelect(book)"></book-row>
 </div>

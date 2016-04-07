@@ -1,9 +1,13 @@
-<h1>Station Guide</h1>
+<div class="container-fluid pad2">
+    <div class="col-xs-3">
+        <books (bookSelected)="onBookSelected($event)"></books>
+    </div>
+    <div class="col-xs-8">
+        <book-view [book]="book"></book-view>
+    </div>
+</div>
 
 
-<books></books>
 
-<word
-    [ngClass]="{selected: selectedWordId == 'word.' + i}"
-    (click)="clickWord($event)" style="display: inline;" *ngFor="#word of words; #i = index" id="word.{{i}}">{{word}} </word>
+
 
