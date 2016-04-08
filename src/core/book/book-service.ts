@@ -5,7 +5,7 @@ export class BookService {
     constructor(private ref: Firebase) {}
 
     createBook(title: string, rawText: string): void {
-        this.ref.push(new Book(title, rawText), (error: Error) => {
+        this.ref.push(new Book(title, rawText, '', 'word.0'), (error: Error) => {
             if (error) {
                 console.error('ERROR @ createBook :', error);
             }

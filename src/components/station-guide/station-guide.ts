@@ -17,66 +17,13 @@ const template: string = require('./station-guide.html');
     ],
 })
 export class StationGuide {
-    //public bookText: string;
-    //public selectedWordId: string;
-    //public words: any;
-
-    public book: IBook; //FirebaseListObservable<Object[]>;
+    public book: IBook;
 
     constructor() {
-        this.book = new Book('', '');
-
-        //var _this = this;
-        //this.bookText = 'No Book Selected';
-        //this.selectedWordId = 'word.0';
-        //this.words = [];
-        //this.book = angularFire.list('/book/a1');
-        //this.book.add({hey: 'What'});
-        //this.book.add('new');
-        //console.log(this.book)
-
-
-        //this.book.subscribe(function (changeData) {
-        //    // If event type is 'value', changeData is a DataSnapshot
-        //    // Otherwise, changeData is:
-        //    // {
-        //    //   snapshot: DataSnapshot,
-        //    //   prevName: optional string of previous child location
-        //    // }
-        //
-        //    console.log(changeData);
-        //    //console.log(two);
-        //    //console.log(three);
-        //    //var curBook = changeData[0];
-        //
-        //    //console.log('CHANGED');
-        //    //console.log(changeData);
-        //    //console.log(curBook.bookText);
-        //    //console.log(curBook.selectedWordId);
-        //    //_this.bookText = curBook.bookText;
-        //    //_this.selectedWordId = curBook.selectedWordId;
-        //    //_this.words = _this.bookText.split(' ');
-        //
-        //    //this.words = this.bookText.split(' ');
-        //    //        console.log('Book Selected: ' + this.bookText);
-        //});
+        this.book = new Book('', '', '', 'word.0');
     }
 
     onBookSelected(book: IBook): void {
-        console.log('Selected dude');
-        console.log(book);
         this.book = book;
     }
-
-    //clickWord(): void {
-    //    //this.selectedWordId = event.target.id;
-    //    //this.book.add({
-    //    //    selectedWordId: this.selectedWordId,
-    //    //    selectedWord: event.target.innerText.trim()
-    //    //});
-    //
-    //    console.log(this.book);
-    //    console.log('word clicked');
-    //    //console.log(event.target.innerText.trim());
-    //};
 }

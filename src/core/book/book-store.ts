@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 import { ReplaySubject } from 'rxjs/subject/ReplaySubject';
-import { IBook } from './book';
+import { IBook, Book } from './book';
 
 
 export class BookStore {
@@ -26,8 +26,10 @@ export class BookStore {
         let key: string = snapshot.key();
         let index: number = this.findIndex(key);
         if (index === -1) {
-            let book: IBook = snapshot.val();
+            let temp: IBook = snapshot.val();
+            let book = new Book(temp.title, temp.rawText, temp.selectedWord, temp.selectedWordId);
             book.key = key;
+            book.init();
             this.list = this.list.push(book);
             this.emit();
         }
@@ -45,8 +47,10 @@ export class BookStore {
         let key: string = snapshot.key();
         let index: number = this.findIndex(key);
         if (index !== -1) {
-            let book: IBook = snapshot.val();
+            let temp: IBook = snapshot.val();
+            let book = new Book(temp.title, temp.rawText, temp.selectedWord, temp.selectedWordId);
             book.key = key;
+            book.init();
             this.list = this.list.set(index, book);
             this.emit();
         }

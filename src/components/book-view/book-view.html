@@ -1,12 +1,17 @@
 <div class="row">
 
-    {{book.rawText}}
+    <div class="page-header">
+        <h1>{{book.title}} <small>by Laura R. Martin</small></h1>
+    </div>
 
-    <!--<word-->
-            <!--[ngClass]="{selected: selectedWordId == 'word.' + i}"-->
-            <!--(click)="clickWord($event)" style="display: inline;" *ngFor="#word of words; #i = index"-->
-            <!--id="word.{{i}}">{{word}}-->
-    <!--</word>-->
-
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <word
+                    [ngClass]="{selected: book.selectedWordId == 'word.' + i}"
+                    (click)="clickWord($event)" style="display: inline;" *ngFor="#word of book.words; #i = index"
+                    id="word.{{i}}">{{word}}
+            </word>
+        </div>
+    </div>
 </div>
 

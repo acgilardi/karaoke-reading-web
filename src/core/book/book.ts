@@ -1,20 +1,34 @@
 export interface IBook {
     title: string;
     rawText: string;
+    selectedWord: string;
     selectedWordId: string;
     key?: string;
+    words: any;
+
+    init(): void;
 }
 
 export class Book implements IBook {
     title: string;
     rawText: string;
-    selectedWord: string = '';
-    selectedWordId: string = 'word.0';
-    //words: Array<String>;
+    selectedWord: string;
+    selectedWordId: string;
+    words: any;
+    key: string;
 
-    constructor(title: string, rawText: string) {
+    constructor(title: string,
+                rawText: string,
+                selectedWord: string,
+                selectedWordId: string
+) {
         this.title = title;
         this.rawText = rawText;
-        //this.words = this.rawText.split(' ');
+        this.selectedWord = selectedWord;
+        this.selectedWordId = selectedWordId;
+    }
+
+    init(): void {
+        this.words = this.rawText.split(' ');
     }
 }
